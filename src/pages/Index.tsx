@@ -327,23 +327,38 @@ const Index = () => {
             Забронировать
           </a>
         </div>
+        {/* Волновой переход вниз */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+          <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 sm:h-20" style={{ display: 'block' }}>
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="hsl(36,28%,97%)" />
+          </svg>
+        </div>
       </section>
+
+      {/* Волновой переход сверху */}
+      <div className="relative -mb-1 overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 sm:h-20" style={{ display: 'block' }}>
+          <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="hsl(22,18%,10%)" />
+        </svg>
+      </div>
 
       {/* BOOKING */}
       <section id="booking" className="relative py-28 overflow-hidden">
         <img src={BOOKING_BG} alt="Фон бронирования" className="absolute inset-0 h-full w-full object-cover scale-105 blur-sm" />
-        <div className="absolute inset-0 bg-black/72" />
+        <div className="absolute inset-0 bg-black/78" />
         <div className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-gold/10 blur-3xl" />
         <div className="pointer-events-none absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-gold/8 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
           <div className="reveal mb-16 text-center">
             <div className="mb-6 flex items-center justify-center gap-3">
-              <div className="h-px w-12 bg-gold" />
-              <p className="text-[11px] uppercase tracking-luxe text-gold">Бронирование</p>
-              <div className="h-px w-12 bg-gold" />
+              <div className="h-px w-16 bg-gold/80" />
+              <p className="text-[11px] uppercase tracking-luxe text-gold font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">Бронирование</p>
+              <div className="h-px w-16 bg-gold/80" />
             </div>
-            <h2 className="font-serif text-4xl font-light text-white sm:text-5xl">Календарь доступности</h2>
-            <p className="mx-auto mt-6 max-w-md font-sans text-sm font-light text-white/70">
+            <h2 className="font-serif text-4xl font-light text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] sm:text-5xl">
+              Календарь доступности
+            </h2>
+            <p className="mx-auto mt-6 max-w-md font-sans text-sm font-light text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)] bg-black/30 rounded px-4 py-2 inline-block">
               Выберите номер и свободные даты — система покажет доступность в реальном времени.
             </p>
           </div>

@@ -85,10 +85,14 @@ const BookingCalendar = () => {
         onClick={() => handleSelect(d)}
         disabled={disabled}
         className={[
-          'relative h-11 text-sm transition-all duration-300 font-sans text-white',
-          disabled ? 'text-white/25 line-through cursor-not-allowed' : 'hover:bg-white/15 cursor-pointer',
-          selectedIn || selectedOut ? 'bg-white text-foreground font-medium' : '',
-          between ? 'bg-white/15 text-white' : '',
+          'relative h-11 text-sm transition-all duration-300 font-sans',
+          disabled
+            ? 'text-white/25 line-through cursor-not-allowed'
+            : selectedIn || selectedOut
+              ? 'bg-white text-foreground font-medium cursor-pointer'
+              : between
+                ? 'bg-white/20 text-white cursor-pointer'
+                : 'text-white hover:bg-white/15 cursor-pointer',
         ].join(' ')}
       >
         {d}

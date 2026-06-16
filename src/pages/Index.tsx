@@ -9,6 +9,7 @@ const DAY_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a44
 const FOOD_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/bucket/5f4d7775-581d-4f9f-8920-4ce3a7405e47.png';
 const ISLAND_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/files/fcc198a3-33c9-40a7-af53-0bc6cd216562.jpg';
 const VERANDAH_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/bucket/780ed35d-6087-4dc3-b0d3-c29a5bd2995c.png';
+const BOOKING_BG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/files/6013a444-07bc-42a2-b0e9-60d4d6584861.jpg';
 
 const ROOMS = [
   { name: 'Мансарда', img: HERO_IMG, desc: 'Уютный номер под скатной крышей с панорамным окном и видом на сад.', price: '4 900 ₽' },
@@ -222,8 +223,7 @@ const Index = () => {
           </div>
           <div className="reveal relative overflow-hidden" style={{ height: '560px' }}>
             <img src={ABOUT_IMG} alt="Веранда" className="parallax-img absolute inset-0 h-[130%] w-full object-cover will-change-transform" style={{ top: '-15%' }} />
-            <div className="absolute -bottom-4 -right-4 h-40 w-40 border-2 border-gold/25 pointer-events-none" />
-            <div className="absolute -top-4 -left-4 h-20 w-20 border-2 border-gold/15 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </div>
         </div>
       </section>
@@ -298,9 +298,9 @@ const Index = () => {
           </div>
           <h2 className="font-serif text-4xl font-light sm:text-5xl">Всё для комфорта</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 border border-border divide-x divide-y divide-border">
           {AMENITIES.map((a, i) => (
-            <div key={a.label} className="reveal group relative overflow-hidden bg-card p-8 text-center transition-all duration-500 hover:shadow-md border border-border -mt-px -ml-px" style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={a.label} className="reveal group relative overflow-hidden bg-card p-8 text-center transition-all duration-500 hover:shadow-inner" style={{ transitionDelay: `${i * 60}ms` }}>
               <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/6 transition-colors duration-500" />
               <Icon name={a.icon} size={30} className="text-gold mb-4 mx-auto transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="text-xs uppercase tracking-luxe text-muted-foreground">{a.label}</span>
@@ -331,10 +331,10 @@ const Index = () => {
 
       {/* BOOKING */}
       <section id="booking" className="relative py-28 overflow-hidden">
-        <img src={VERANDAH_IMG} alt="Веранда" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-black/68" />
-        <div className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-gold/8 blur-3xl" />
-        <div className="pointer-events-none absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-gold/6 blur-3xl" />
+        <img src={BOOKING_BG} alt="Фон бронирования" className="absolute inset-0 h-full w-full object-cover scale-105 blur-sm" />
+        <div className="absolute inset-0 bg-black/72" />
+        <div className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-gold/10 blur-3xl" />
+        <div className="pointer-events-none absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-gold/8 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
           <div className="reveal mb-16 text-center">
             <div className="mb-6 flex items-center justify-center gap-3">
@@ -394,8 +394,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="reveal min-h-[440px] overflow-hidden border border-border relative group">
-            <div className="absolute inset-0 border-2 border-gold/0 group-hover:border-gold/20 transition-all duration-700 z-10 pointer-events-none" />
+          <div className="reveal min-h-[440px] overflow-hidden border border-border relative">
             <iframe
               title="Карта"
               src="https://yandex.ru/map-widget/v1/?ll=44.89%2C48.72&z=12&pt=44.89%2C48.72"

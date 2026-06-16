@@ -313,6 +313,8 @@ const Index = () => {
       <section ref={parallaxGastro} className="relative overflow-hidden" style={{ height: '560px' }}>
         <img src={FOOD_IMG} alt="Угощения" className="parallax-img absolute inset-0 h-[130%] w-full object-cover will-change-transform" style={{ top: '-15%' }} />
         <div className="absolute inset-0 bg-black/60" />
+        {/* плавный переход вниз к следующей тёмной секции */}
+        <div className="absolute bottom-0 left-0 w-full h-40 pointer-events-none" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 100%)' }} />
         <div className="reveal relative flex h-full flex-col items-center justify-center px-6 text-center">
           <div className="mb-6 flex items-center justify-center gap-3">
             <div className="h-px w-12 bg-gold" />
@@ -327,33 +329,22 @@ const Index = () => {
             Забронировать
           </a>
         </div>
-        {/* Волновой переход вниз */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
-          <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 sm:h-20" style={{ display: 'block' }}>
-            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="hsl(36,28%,97%)" />
-          </svg>
-        </div>
       </section>
-
-      {/* Волновой переход сверху */}
-      <div className="relative -mb-1 overflow-hidden leading-none">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 sm:h-20" style={{ display: 'block' }}>
-          <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="hsl(22,18%,10%)" />
-        </svg>
-      </div>
 
       {/* BOOKING */}
       <section id="booking" className="relative py-28 overflow-hidden">
         <img src={BOOKING_BG} alt="Фон бронирования" className="absolute inset-0 h-full w-full object-cover scale-105 blur-sm" />
         <div className="absolute inset-0 bg-black/78" />
+        {/* плавный переход сверху от предыдущей секции */}
+        <div className="absolute top-0 left-0 w-full h-32 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 100%)' }} />
         <div className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-gold/10 blur-3xl" />
         <div className="pointer-events-none absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-gold/8 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
           <div className="reveal mb-16 text-center">
             <div className="mb-6 flex items-center justify-center gap-3">
-              <div className="h-px w-16 bg-gold/80" />
-              <p className="text-[11px] uppercase tracking-luxe text-gold font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">Бронирование</p>
-              <div className="h-px w-16 bg-gold/80" />
+              <div className="h-px w-16 bg-gold" />
+              <p className="text-[12px] font-bold uppercase tracking-luxe text-gold drop-shadow-[0_0_12px_rgba(200,140,60,0.8)]">Бронирование</p>
+              <div className="h-px w-16 bg-gold" />
             </div>
             <h2 className="font-serif text-4xl font-light text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] sm:text-5xl">
               Календарь доступности

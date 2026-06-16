@@ -8,6 +8,7 @@ const ABOUT_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a
 const DAY_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/bucket/6ff3cc90-6424-4020-a024-ae7115c4c571.png';
 const FOOD_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/bucket/5f4d7775-581d-4f9f-8920-4ce3a7405e47.png';
 const ISLAND_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/files/fcc198a3-33c9-40a7-af53-0bc6cd216562.jpg';
+const VERANDAH_IMG = 'https://cdn.poehali.dev/projects/230d2293-57f8-461e-b891-d63a4444b678/bucket/780ed35d-6087-4dc3-b0d3-c29a5bd2995c.png';
 
 const ROOMS = [
   { name: 'Мансарда', img: HERO_IMG, desc: 'Уютный номер под скатной крышей с панорамным окном и видом на сад.', price: '4 900 ₽' },
@@ -297,10 +298,10 @@ const Index = () => {
           </div>
           <h2 className="font-serif text-4xl font-light sm:text-5xl">Всё для комфорта</h2>
         </div>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4">
           {AMENITIES.map((a, i) => (
-            <div key={a.label} className="reveal group relative overflow-hidden border border-border bg-card p-8 text-center transition-all duration-500 hover:border-gold/50 hover:shadow-md" style={{ transitionDelay: `${i * 60}ms` }}>
-              <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/4 transition-colors duration-500" />
+            <div key={a.label} className="reveal group relative overflow-hidden bg-card p-8 text-center transition-all duration-500 hover:shadow-md border border-border -mt-px -ml-px" style={{ transitionDelay: `${i * 60}ms` }}>
+              <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/6 transition-colors duration-500" />
               <Icon name={a.icon} size={30} className="text-gold mb-4 mx-auto transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="text-xs uppercase tracking-luxe text-muted-foreground">{a.label}</span>
             </div>
@@ -329,9 +330,11 @@ const Index = () => {
       </section>
 
       {/* BOOKING */}
-      <section id="booking" className="relative bg-secondary/40 py-28 overflow-hidden">
-        <div className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-gold/6 blur-3xl" />
-        <div className="pointer-events-none absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-gold/5 blur-3xl" />
+      <section id="booking" className="relative py-28 overflow-hidden">
+        <img src={VERANDAH_IMG} alt="Веранда" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-black/68" />
+        <div className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-gold/8 blur-3xl" />
+        <div className="pointer-events-none absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-gold/6 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
           <div className="reveal mb-16 text-center">
             <div className="mb-6 flex items-center justify-center gap-3">
@@ -339,8 +342,8 @@ const Index = () => {
               <p className="text-[11px] uppercase tracking-luxe text-gold">Бронирование</p>
               <div className="h-px w-12 bg-gold" />
             </div>
-            <h2 className="font-serif text-4xl font-light sm:text-5xl">Календарь доступности</h2>
-            <p className="mx-auto mt-6 max-w-md font-sans text-sm font-light text-muted-foreground">
+            <h2 className="font-serif text-4xl font-light text-white sm:text-5xl">Календарь доступности</h2>
+            <p className="mx-auto mt-6 max-w-md font-sans text-sm font-light text-white/70">
               Выберите номер и свободные даты — система покажет доступность в реальном времени.
             </p>
           </div>
